@@ -37,8 +37,8 @@ showErrorsModule.directive 'showErrors',
         return if !blurred
         toggleClasses invalid
 
-      scope.$on 'show-errors-check-validity', ->
-        toggleClasses formCtrl[inputName].$invalid
+      scope.$on 'show-errors-check-validity', (event, args)->
+        toggleClasses formCtrl[inputName].$invalid if !args.form or args.form == formCtrl
 
       scope.$on 'show-errors-reset', ->
         $timeout ->
