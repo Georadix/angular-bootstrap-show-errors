@@ -38,7 +38,7 @@ showErrorsModule.directive 'showErrors',
         toggleClasses invalid
 
       scope.$on 'show-errors-check-validity', (event, args)->
-        toggleClasses formCtrl[inputName].$invalid if !args.form or args.form == formCtrl
+        toggleClasses formCtrl[inputName].$invalid if !args or args.form == formCtrl
 
       scope.$on 'show-errors-reset', ->
         $timeout ->

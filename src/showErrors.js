@@ -48,7 +48,7 @@
           return toggleClasses(invalid);
         });
         scope.$on('show-errors-check-validity', function(event, args) {
-          if (!args.form || args.form === formCtrl) {
+          if (!args || args.form === formCtrl) {
             return toggleClasses(formCtrl[inputName].$invalid);
           }
         });
